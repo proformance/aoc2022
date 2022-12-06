@@ -11,3 +11,5 @@ Day 03 - C++
 Day 04 - dart
 
 Day 05 - C++
+
+Day 06 - Python
