@@ -1,8 +1,8 @@
-FROM frolvlad/alpine-gxx as BASE
+FROM gcc as BASE
 COPY src/aoc.cpp .
-RUN g++ aoc.cpp -o /bin/aoc
+RUN gcc aoc.cpp -o /bin/aoc -static -lstdc++ -std=c++11
 
 FROM scratch
-COPY --from=BASE /bin/aoc /bin/aoc
+COPY --from=BASE /bin/aoc /bin/
 COPY input.txt .
 ENTRYPOINT ["/bin/aoc"]
